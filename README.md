@@ -75,7 +75,7 @@ Utilize your contract repository by requiring it, which will return the JSON as 
 To make use of the JSON that was generated:
 ```
 import { config } from @onflow/fcl
-import { scripts, transactions, config } from 'MyContractPackage'
+import { scripts, transactions, vars } from 'MyContractPackage'
 
 // Fill in FCL config with variables from config
 // testnet is hardcoded here, but switch it depending on your environment
