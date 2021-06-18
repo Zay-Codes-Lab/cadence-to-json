@@ -1,4 +1,4 @@
-# cadence-to-js
+# cadence-to-json
 *Made and opinionated by https://zay.codes - Reach out if you want to hire us to help build your Flow apps!*
 
 ## Overview
@@ -21,20 +21,20 @@ Do you use **one repository** for all of your cadence and front-end code? Click 
 
 For the following steps, you may modify them however you'd like to, and this is just how we use it ourselves.
 
-Create a package.json, add the following script:
-`
+Create a package.json, add the following:
+```
 {
     "main": "index.js"
     "scripts": {
         "prepare": "mkdir -p lib & node build.js"
     }
 }
-`
+```
 
 Create a 'build.js' with the following content:
 
 This assumes your cadence transactions and scripts are located at "./cadence/transactions" and "./cadence/scripts" respectively.
-`
+```
 const fs = require('fs');
 const path = require('path');
 const transactionsPath = path.join(__dirname, 'cadence', 'transactions', '/')
@@ -55,7 +55,7 @@ const convertCadenceToJs = async () => {
 }
 
 convertCadenceToJs()
-`
+```
 
 If you have multiple flow.jsons you'd like to merge, you can use lodash with `_.merge(require('./flow.json'), require(./flow.private.json'))` to deep merge them instead of the config value shown above.
 ``
@@ -72,8 +72,8 @@ Utilize your contract repository by requiring it, which will return the JSON as 
 
 `npm install --save MyContractPackage` or `npm install --save ../MyContractPackage` (for local development)
 
-To use it, peep the following:
-`
+To make use of the JSON that was generated:
+```
 import { config } from @onflow/fcl
 import { scripts, transactions, config } from 'MyContractPackage'
 
@@ -99,8 +99,7 @@ return fcl
     .then(fcl.decode)
 
 // same deal with transactions, MyTransaction.cdc would be transactions.MyTransaction
-
-`
+```
 
 ### Single Repository Setup
 
