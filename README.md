@@ -10,9 +10,9 @@ with FCL, because the way contracts have variables in FCL is not the same as how
 ## Installation
 ##### *Bare with the setup, it's worth it*
 
-Do you use **separate repositories (RECOMMENDED)** for all of your cadence and front-end code? Click [here](#separate-repository-setup) for setup instructions.
+Do you use **separate repositories (RECOMMENDED)** for all of your cadence and front-end code? Click [here](#separate-repositories-setup) for setup instructions.
 
-Do you use **one repository** for all of your cadence and front-end code? Click [here](#separate-repository-setup) for setup instructions.
+Do you use **one repository** for all of your cadence and front-end code? Click [here](#single-repository-setup) for setup instructions.
 
 ### Separate Repositories Setup
 
