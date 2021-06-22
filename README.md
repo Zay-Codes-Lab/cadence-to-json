@@ -58,13 +58,13 @@ convertCadenceToJs()
 ```
 
 If you have multiple flow.jsons you'd like to merge, you can use lodash with `_.merge(require('./flow.json'), require(./flow.private.json'))` to deep merge them instead of the config value shown above.
-``
+
 
 This will write a JSON file at 'lib/CadenceToJson.json'
 
 To expose that above JSON file for use from your front-end respository, make an `index.js` with the following content:
 
-`module.exports = require('./lib/CadenceToJs.json')`
+`module.exports = require('./lib/CadenceToJs.jsonon')`
 
 #### From your front-end Repository
 
