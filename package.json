@@ -1,5 +1,5 @@
 {
-  "name": "cadence-to-js",
+  "name": "cadence-to-json",
   "version": "1.0.0",
   "description": "Helps make cadence scripts and transactions easily usable from JS packages, see README for usage instructions.",
   "main": "index.js",
