@@ -23,6 +23,10 @@ const readDirectory = (dir) => {
             if (err) { reject(err) }
             
             const allFiles = []
+            if (!files || files.length === 0) {
+                resolve([])
+                return;
+            }
             files.forEach((filename) => {
                 const readFilePromise = readFile(dir, filename);
                 allFiles.push(readFilePromise)
