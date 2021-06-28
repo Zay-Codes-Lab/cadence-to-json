@@ -17,7 +17,7 @@ Do you use **one repository** for all of your cadence and front-end code? Click 
 ### Separate Repositories Setup
 
 #### From your Contract repository
-`npm -s install cadence-to-js` or `yarn add cadence-to-json`
+`npm -s install cadence-to-json` or `yarn add cadence-to-json`
 
 For the following steps, you may modify them however you'd like to, and this is just how we use it ourselves.
 
@@ -41,7 +41,7 @@ const transactionsPath = path.join(__dirname, 'cadence', 'transactions', '/')
 const scriptsPath = path.join(__dirname, 'cadence', 'scripts', '/')
 
 const convertCadenceToJs = async () => {
-    const resultingJs = await require('cadence-to-js')({
+    const resultingJs = await require('cadence-to-json')({
         transactions: [ transactionsPath ],
         scripts: [ scriptsPath ],
         config: require('./flow.json')
