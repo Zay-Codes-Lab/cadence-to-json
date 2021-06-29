@@ -57,7 +57,7 @@ const convertCadenceToJs = async () => {
 convertCadenceToJs()
 ```
 
-If you have multiple flow.jsons you'd like to merge, you can use lodash with `_.merge(require('./flow.json'), require(./flow.private.json'))` to deep merge them instead of the config value shown above.
+If you have multiple flow.jsons you'd like to merge, you can use lodash with `_.merge(require('./flow.json'), require('./flow.private.json'))` to deep merge them instead of the config value shown above.
 
 
 This will write a JSON file at 'lib/CadenceToJson.json'
