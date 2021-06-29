@@ -40,7 +40,9 @@ const readDirectory = (dir) => {
 
 // Append 0x to an address if it doesn't start with it already
 const withPrefix = (address) => {
-    if (!address.startsWith('0x')) {
+    if (!address) {
+        return address
+    } else if (!address.startsWith('0x')) {
         return `0x${address}`
     } else {
         return address
