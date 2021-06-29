@@ -38,6 +38,15 @@ const readDirectory = (dir) => {
     })
 }
 
+// Append 0x to an address if it doesn't start with it already
+const withPrefix = (address) => {
+    if (!address.startsWith('0x')) {
+        return `0x${address}`
+    } else {
+        return address
+    }
+}
+
 // For all locally imported contracts, switch out the import statement
 // to use our previously stored variables
 const translateCadenceToJs = (config, cadenceSrc) => {
@@ -75,7 +84,7 @@ const getAccountAddressForContract = (config, network, contractName) => {
     
     // If we didn't get an address here, we would expect that there is an alias
     // that will fill in the address we need, return null from here.
-    return toReturn;
+    return withPrefix(toReturn);
 }
 
 // Fill in FCL contract variables from flow json configs
@@ -89,7 +98,7 @@ const readConfig = (config, network) => {
         if (contract.aliases) {
             const contractKey = `0x${contractName.replace('.cdc', '')}`
             if (contract.aliases[network]) {
-                contractVariables[contractKey] = contract.aliases[network]
+                contractVariables[contractKey] = withPrefix(contract.aliases[network])
             } else {
                 contractVariables[contractKey] = defaultContractAddress
             }
@@ -98,7 +107,6 @@ const readConfig = (config, network) => {
             contractVariables[contractKey] = defaultContractAddress
         }
     })
-    contractVariables['accessNode.api'] = config.networks[network]
     return contractVariables
 }
 
