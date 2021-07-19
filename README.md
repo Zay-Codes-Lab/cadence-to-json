@@ -64,7 +64,7 @@ This will write a JSON file at 'lib/CadenceToJson.json'
 
 To expose that above JSON file for use from your front-end respository, make an `index.js` with the following content:
 
-`module.exports = require('./lib/CadenceToJs.jsonon')`
+`module.exports = require('./lib/CadenceToJs.json')`
 
 #### From your front-end Repository
 
