@@ -24,7 +24,7 @@ For the following steps, you may modify them however you'd like to, and this is 
 Create a package.json, add the following:
 ```
 {
-    "main": "index.js"
+    "main": "index.js",
     "scripts": {
         "prepare": "mkdir -p lib & node build.js"
     }
